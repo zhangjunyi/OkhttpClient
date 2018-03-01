@@ -1,0 +1,68 @@
+ private CacheStrategy getCandidate() {
+      // No cached response.
+      if (cacheResponse == null) {
+        return new CacheStrategy(request, null);
+      }
+
+      // Drop the cached response if it's missing a required handshake.
+      if (request.isHttps() && cacheResponse.handshake() == null) {
+        return new CacheStrategy(request, null);
+      }
+
+      // If this response shouldn't have been stored, it should never be used
+      // as a response source. This check should be redundant as long as the
+      // persistence store is well-behaved and the rules are constant.
+      if (!isCacheable(cacheResponse, request)) {
+        return new CacheStrategy(request, null);
+      }
+
+      CacheControl requestCaching = request.cacheControl();
+      if (requestCaching.noCache() || hasConditions(request)) {
+        return new CacheStrategy(request, null);
+      }
+
+      long ageMillis = cacheResponseAge();
+      long freshMillis = computeFreshnessLifetime();
+
+      if (requestCaching.maxAgeSeconds() != -1) {
+        freshMillis = Math.min(freshMillis, SECONDS.toMillis(requestCaching.maxAgeSeconds()));
+      }
+
+      long minFreshMillis = 0;
+      if (requestCaching.minFreshSeconds() != -1) {
+        minFreshMillis = SECONDS.toMillis(requestCaching.minFreshSeconds());
+      }
+
+      long maxStaleMillis = 0;
+      CacheControl responseCaching = cacheResponse.cacheControl();
+      if (!responseCaching.mustRevalidate() && requestCaching.maxStaleSeconds() != -1) {
+        maxStaleMillis = SECONDS.toMillis(requestCaching.maxStaleSeconds());
+      }
+
+      if (!responseCaching.noCache() && ageMillis + minFreshMillis < freshMillis + maxStaleMillis) {
+        Response.Builder builder = cacheResponse.newBuilder();
+        if (ageMillis + minFreshMillis >= freshMillis) {
+          builder.addHeader("Warning", "110 HttpURLConnection \"Response is stale\"");
+        }
+        long oneDayMillis = 24 * 60 * 60 * 1000L;
+        if (ageMillis > oneDayMillis && isFreshnessLifetimeHeuristic()) {
+          builder.addHeader("Warning", "113 HttpURLConnection \"Heuristic expiration\"");
+        }
+        return new CacheStrategy(null, builder.build());
+      }
+
+      Request.Builder conditionalRequestBuilder = request.newBuilder();
+
+      if (etag != null) {
+        conditionalRequestBuilder.header("If-None-Match", etag);
+      } else if (lastModified != null) {
+        conditionalRequestBuilder.header("If-Modified-Since", lastModifiedString);
+      } else if (servedDate != null) {
+        conditionalRequestBuilder.header("If-Modified-Since", servedDateString);
+      }
+
+      Request conditionalRequest = conditionalRequestBuilder.build();
+      return hasConditions(conditionalRequest)
+          ? new CacheStrategy(conditionalRequest, cacheResponse)
+          : new CacheStrategy(conditionalRequest, null);
+    }

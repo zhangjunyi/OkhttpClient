@@ -1,0 +1,119 @@
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/yggxx/!svn/ver/5122/OkhttpClient/src/com/squareup/okhttp/internal/http
+END
+HttpConnection.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/yggxx/!svn/ver/5122/OkhttpClient/src/com/squareup/okhttp/internal/http/HttpConnection.java
+END
+RouteSelector.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/yggxx/!svn/ver/5122/OkhttpClient/src/com/squareup/okhttp/internal/http/RouteSelector.java
+END
+RequestLine.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/yggxx/!svn/ver/313/OkhttpClient/src/com/squareup/okhttp/internal/http/RequestLine.java
+END
+OkHeaders.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/yggxx/!svn/ver/313/OkhttpClient/src/com/squareup/okhttp/internal/http/OkHeaders.java
+END
+HttpEngine.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/yggxx/!svn/ver/5129/OkhttpClient/src/com/squareup/okhttp/internal/http/HttpEngine.java
+END
+HeaderParser.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/yggxx/!svn/ver/313/OkhttpClient/src/com/squareup/okhttp/internal/http/HeaderParser.java
+END
+RequestException.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/yggxx/!svn/ver/313/OkhttpClient/src/com/squareup/okhttp/internal/http/RequestException.java
+END
+FramedTransport.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/yggxx/!svn/ver/313/OkhttpClient/src/com/squareup/okhttp/internal/http/FramedTransport.java
+END
+AuthenticatorAdapter.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/yggxx/!svn/ver/313/OkhttpClient/src/com/squareup/okhttp/internal/http/AuthenticatorAdapter.java
+END
+CacheRequest.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/yggxx/!svn/ver/313/OkhttpClient/src/com/squareup/okhttp/internal/http/CacheRequest.java
+END
+RouteException.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/yggxx/!svn/ver/313/OkhttpClient/src/com/squareup/okhttp/internal/http/RouteException.java
+END
+HttpDate.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/yggxx/!svn/ver/313/OkhttpClient/src/com/squareup/okhttp/internal/http/HttpDate.java
+END
+RetryableSink.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/yggxx/!svn/ver/313/OkhttpClient/src/com/squareup/okhttp/internal/http/RetryableSink.java
+END
+RealResponseBody.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/yggxx/!svn/ver/313/OkhttpClient/src/com/squareup/okhttp/internal/http/RealResponseBody.java
+END
+HttpMethod.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/yggxx/!svn/ver/5129/OkhttpClient/src/com/squareup/okhttp/internal/http/HttpMethod.java
+END
+CacheStrategy.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/yggxx/!svn/ver/5129/OkhttpClient/src/com/squareup/okhttp/internal/http/CacheStrategy.java
+END
+StatusLine.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/yggxx/!svn/ver/313/OkhttpClient/src/com/squareup/okhttp/internal/http/StatusLine.java
+END
+HttpTransport.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/yggxx/!svn/ver/313/OkhttpClient/src/com/squareup/okhttp/internal/http/HttpTransport.java
+END
+Transport.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/yggxx/!svn/ver/313/OkhttpClient/src/com/squareup/okhttp/internal/http/Transport.java
+END

@@ -1,0 +1,107 @@
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/yggxx/!svn/ver/5122/OkhttpClient/src/com/squareup/okhttp/internal/framed
+END
+Settings.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/yggxx/!svn/ver/313/OkhttpClient/src/com/squareup/okhttp/internal/framed/Settings.java
+END
+Http2.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/yggxx/!svn/ver/313/OkhttpClient/src/com/squareup/okhttp/internal/framed/Http2.java
+END
+Spdy3.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/yggxx/!svn/ver/313/OkhttpClient/src/com/squareup/okhttp/internal/framed/Spdy3.java
+END
+Variant.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/yggxx/!svn/ver/313/OkhttpClient/src/com/squareup/okhttp/internal/framed/Variant.java
+END
+FramedStream.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/yggxx/!svn/ver/313/OkhttpClient/src/com/squareup/okhttp/internal/framed/FramedStream.java
+END
+NameValueBlockReader.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/yggxx/!svn/ver/313/OkhttpClient/src/com/squareup/okhttp/internal/framed/NameValueBlockReader.java
+END
+FrameReader.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/yggxx/!svn/ver/313/OkhttpClient/src/com/squareup/okhttp/internal/framed/FrameReader.java
+END
+IncomingStreamHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/yggxx/!svn/ver/313/OkhttpClient/src/com/squareup/okhttp/internal/framed/IncomingStreamHandler.java
+END
+FramedConnection.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/yggxx/!svn/ver/5122/OkhttpClient/src/com/squareup/okhttp/internal/framed/FramedConnection.java
+END
+HeadersMode.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/yggxx/!svn/ver/313/OkhttpClient/src/com/squareup/okhttp/internal/framed/HeadersMode.java
+END
+ErrorCode.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/yggxx/!svn/ver/313/OkhttpClient/src/com/squareup/okhttp/internal/framed/ErrorCode.java
+END
+Huffman.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/yggxx/!svn/ver/313/OkhttpClient/src/com/squareup/okhttp/internal/framed/Huffman.java
+END
+Hpack.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/yggxx/!svn/ver/313/OkhttpClient/src/com/squareup/okhttp/internal/framed/Hpack.java
+END
+FrameWriter.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/yggxx/!svn/ver/313/OkhttpClient/src/com/squareup/okhttp/internal/framed/FrameWriter.java
+END
+PushObserver.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/yggxx/!svn/ver/313/OkhttpClient/src/com/squareup/okhttp/internal/framed/PushObserver.java
+END
+Header.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/yggxx/!svn/ver/313/OkhttpClient/src/com/squareup/okhttp/internal/framed/Header.java
+END
+Ping.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/yggxx/!svn/ver/313/OkhttpClient/src/com/squareup/okhttp/internal/framed/Ping.java
+END

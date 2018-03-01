@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/yggxx/!svn/ver/1249/OkhttpClient/src/http/okhttp/request
+END
+OkHttpGetRequest.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/yggxx/!svn/ver/5129/OkhttpClient/src/http/okhttp/request/OkHttpGetRequest.java
+END
+OkHttpRequest.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/yggxx/!svn/ver/5129/OkhttpClient/src/http/okhttp/request/OkHttpRequest.java
+END
+OkHttpDisplayImgRequest.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/yggxx/!svn/ver/5129/OkhttpClient/src/http/okhttp/request/OkHttpDisplayImgRequest.java
+END
+OkHttpUploadRequest.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/yggxx/!svn/ver/5129/OkhttpClient/src/http/okhttp/request/OkHttpUploadRequest.java
+END
+OkHttpPostRequest.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/yggxx/!svn/ver/5129/OkhttpClient/src/http/okhttp/request/OkHttpPostRequest.java
+END
+OkHttpDownloadRequest.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/yggxx/!svn/ver/5129/OkhttpClient/src/http/okhttp/request/OkHttpDownloadRequest.java
+END
+CountingRequestBody.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/yggxx/!svn/ver/4/OkhttpClient/src/http/okhttp/request/CountingRequestBody.java
+END

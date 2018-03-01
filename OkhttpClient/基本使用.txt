@@ -1,0 +1,210 @@
+public class MainActivity extends Activity {
+
+	private TextView mTv;
+	private ImageView mImageView;
+	private ProgressBar mProgressBar;
+
+	public abstract class MyResultCallback<T> extends ResultCallback<T> {
+
+		@Override
+		public void onBefore(Request request) {
+			super.onBefore(request);
+			setTitle("loading...");
+		}
+
+		@Override
+		public void onAfter() {
+			super.onAfter();
+			setTitle("Sample-okHttp");
+		}
+	}
+
+	private ResultCallback<String> stringResultCallback = new MyResultCallback<String>()//
+	{
+		@Override
+		public void onError(Request request, Exception e) {
+			Log.e("TAG", "onError , e = " + e.getMessage());
+		}
+
+		@Override
+		public void onResponse(String response) {
+			Log.e("TAG", "onResponse , response = " + response);
+			mTv.setText("operate success");
+		}
+
+		@Override
+		public void inProgress(float progress) {
+			mProgressBar.setProgress((int) (100 * progress));
+		}
+	};
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_main1);
+
+	}
+
+	public void getUser(View view) {
+		String url = null;
+		new OkHttpRequest.Builder().url(url).get(
+				new MyResultCallback<Disease>() {
+					@Override
+					public void onError(Request request, Exception e) {
+						Log.e("TAG", "onError , e = " + e.getMessage());
+					}
+
+					@Override
+					public void onResponse(Disease response) {
+						Log.e("TAG", "onResponse , Disease = " + response);
+					}
+				});
+
+	}
+
+	public void getUsers(View view) {
+		Map<String, String> params = new HashMap<String, String>();
+		params.put("id", "1");
+		String url = "http://www.tngou.net/api/drug/classify";
+		new OkHttpRequest.Builder().url(url).params(params)
+				.post(new MyResultCallback<List<Disease>>() {
+					@Override
+					public void onError(Request request, Exception e) {
+						Log.e("TAG", "onError , e = " + e.getMessage());
+					}
+
+					@Override
+					public void onResponse(List<Disease> users) {
+						Log.e("TAG", "onResponse , users = " + users);
+						mTv.setText(users.get(0).toString());
+					}
+				});
+
+	}
+
+	public void getSimpleString(View view) {
+		String url = "";
+		// 缓存只设置一次
+		new OkHttpRequest.Builder().url(url)
+				.setCache(getApplicationContext(), 0)
+				.get(new MyResultCallback<String>() {
+					@Override
+					public void onError(Request request, Exception e) {
+						Log.e("TAG", "onError , e = " + e.getMessage());
+					}
+
+					@Override
+					public void onResponse(String response) {
+						mTv.setText(response);
+					}
+				});
+
+	}
+
+	public void getHtml(View view) {
+		String url = "";
+		new OkHttpRequest.Builder().url(url).get(
+				new MyResultCallback<String>() {
+					@Override
+					public void onError(Request request, Exception e) {
+						Log.e("TAG", "onError" + e.getMessage());
+					}
+
+					@Override
+					public void onResponse(String response) {
+						mTv.setText(response);
+					}
+				});
+	}
+
+	public void getHttpsHtml(View view) {
+		String url = "https://kyfw.12306.cn/otn/";
+		new OkHttpRequest.Builder().url(url).get(
+				new MyResultCallback<String>() {
+					@Override
+					public void onError(Request request, Exception e) {
+						Log.e("TAG", "onError" + e.getMessage());
+					}
+
+					@Override
+					public void onResponse(String response) {
+						mTv.setText(response);
+					}
+				});
+	}
+
+	public void getImage(View view) {
+		String url = "http://images.csdn.net/20150817/1.jpg";
+		mTv.setText("");
+		new OkHttpRequest.Builder().url(url).imageView(mImageView)
+				.displayImage(null);
+	}
+
+	public void uploadFile(View view) {
+
+		File file = new File(Environment.getExternalStorageDirectory(),
+				"messenger_01.png");
+		if (!file.exists()) {
+			Toast.makeText(MainActivity.this, "文件不存在，请修改文件路径",
+					Toast.LENGTH_SHORT).show();
+			return;
+		}
+		Map<String, String> params = new HashMap<String, String>();
+		params.put("username", "ww");
+		params.put("password", "123");
+
+		Map<String, String> headers = new HashMap<String, String>();
+		headers.put("APP-Key", "APP-Secret222");
+		headers.put("APP-Secret", "APP-Secret111");
+
+		String url = "";
+		new OkHttpRequest.Builder()
+				//
+				.url(url)
+				//
+				.params(params).headers(headers)
+				.files(new Pair<String, File>("mFile", file))//
+				.upload(stringResultCallback);
+	}
+
+	public void multiFileUpload(View view) {
+		File file = new File(Environment.getExternalStorageDirectory(),
+				"messenger_01.png");
+		File file2 = new File(Environment.getExternalStorageDirectory(),
+				"test1.txt");
+		if (!file.exists()) {
+			Toast.makeText(MainActivity.this, "文件不存在，请修改文件路径",
+					Toast.LENGTH_SHORT).show();
+			return;
+		}
+		Map<String, String> params = new HashMap<String, String>();
+		params.put("username", "");
+		params.put("password", "123");
+
+		String url = "";
+		new OkHttpRequest.Builder()
+				//
+				.url(url)
+				//
+				.params(params)
+				.files(new Pair<String, File>("mFile", file),
+						new Pair<String, File>("mFile", file2))//
+				.upload(stringResultCallback);
+
+	}
+
+	public void downloadFile(View view) {
+		String url = "";
+		new OkHttpRequest.Builder()
+				.url(url)
+				.destFileDir(
+						Environment.getExternalStorageDirectory()
+								.getAbsolutePath())
+				.destFileName("gson-2.2.1.jar").download(stringResultCallback);
+	}
+
+	@Override
+	protected void onDestroy() {
+		super.onDestroy();
+		// OkHttpClientManager.cancelTag(this);
+	}
